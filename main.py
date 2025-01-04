@@ -15,7 +15,10 @@ languages = {
     "중국어": "zh-cn",
     "러시아어": "ru",
     "아랍어": "ar",
-    "프랑스어": "fr"
+    "프랑스어": "fr",
+    "스페인어": "es",
+    "인도네시아어": "id",
+    "베트남어": "vi"
 }
 
 selected_languages = st.multiselect(
@@ -37,4 +40,3 @@ if st.button("번역하기"):
                 st.error(f"{language} 번역 중 오류가 발생했습니다: {str(e)}")
     else:
         st.warning("번역할 텍스트를 입력하세요.")
-
