@@ -2,7 +2,7 @@ import streamlit as st
 from deep_translator import GoogleTranslator
 
 # 제목 설정
-st.title("한국어-영어 번역기")
+st.title("한국어-영어 전용 번역기")
 st.write("텍스트를 한국어에서 영어로, 또는 영어에서 한국어로 번역합니다.")
 
 # 입력 텍스트
