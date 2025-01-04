@@ -12,7 +12,7 @@ text_to_translate = st.text_area("번역할 텍스트를 입력하세요:", "")
 languages = {
     "영어": "en",
     "일본어": "ja",
-    "중국어": "zh-cn",
+    "중국어": "zh-CN",
     "러시아어": "ru",
     "아랍어": "ar",
     "프랑스어": "fr",
