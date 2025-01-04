@@ -1,12 +1,9 @@
 import streamlit as st
-from googletrans import Translator
+from deep_translator import GoogleTranslator
 
 # 제목 설정
 st.title("다국어 번역기")
 st.write("입력한 텍스트를 여러 언어로 번역합니다.")
-
-# 번역기 초기화
-translator = Translator()
 
 # 입력 텍스트
 text_to_translate = st.text_area("번역할 텍스트를 입력하세요:", "")
@@ -33,7 +30,11 @@ if st.button("번역하기"):
         st.subheader("번역 결과")
         for language in selected_languages:
             lang_code = languages[language]
-            translated_text = translator.translate(text_to_translate, dest=lang_code).text
-            st.write(f"**{language}**: {translated_text}")
+            try:
+                translated_text = GoogleTranslator(source="auto", target=lang_code).translate(text_to_translate)
+                st.write(f"**{language}**: {translated_text}")
+            except Exception as e:
+                st.error(f"{language} 번역 중 오류가 발생했습니다: {str(e)}")
     else:
         st.warning("번역할 텍스트를 입력하세요.")
+
